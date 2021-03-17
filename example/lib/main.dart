@@ -3,6 +3,8 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:ceyfleon/ceyfleon.dart';
+import 'package:get/get.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -44,7 +46,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Plugin example app'),
