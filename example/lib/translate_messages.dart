@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 class Messages extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
-    'en_US': {
+    'en': {
       'hello': 'Hello World',
     },
-    'de_DE': {
+    'de': {
       'hello': 'Hallo Welt',
     }
   };

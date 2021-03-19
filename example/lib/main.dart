@@ -1,3 +1,4 @@
+import 'package:ceyfleon_example/translate_messages.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -47,12 +48,34 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      translations: Messages(),
+      locale: Locale('en', 'US'),
+      fallbackLocale: Locale('en', 'UK'),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child: Column(
+            children: <Widget> [Text('hello'.tr),
+              ElevatedButton(
+              onPressed: () {
+                var locale = Locale('en');
+                Get.updateLocale(locale);
+                Get.changeTheme(ThemeData.light());
+              },
+                child: Text('US'),
+              ),
+              ElevatedButton(
+              onPressed: () {
+                var locale = Locale('de');
+                Get.updateLocale(locale);
+                Get.changeTheme(ThemeData.dark());
+              },
+                child: Text('Dutch'),
+              ),
+            ],
+          ),
         ),
       ),
     );
